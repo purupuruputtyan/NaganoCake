@@ -1,0 +1,2 @@
+class Addess < ApplicationRecord
+end
