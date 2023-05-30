@@ -23,7 +23,7 @@ scope module: :public do
     end
   end
   resources :cart_items, only: [:index, :create, :update, :destroy] do
-    get 'destroy_all', on: :member
+    get 'destroy_all', on: :collection
   end
   resources :orders, only: [:new, :index, :create, :show] do
     collection do
