@@ -25,10 +25,22 @@ scope module: :public do
   resources :cart_items, only: [:index, :create, :update, :destroy] do
     get 'destroy_all', on: :member
   end
+  resources :orders, only: [:new, :index, :create, :show] do
+    collection do
+      post :confirm
+      get :thanks
+    end
+  end
+  resources :addresses, only: [:index, :create, :edit, :update, :destroy]
 end
 
 namespace :admin do
-
+  root to: 'homes#top'
+  resources :items, only: [:new, :index, :create, :show, :edit, :update]
+  resources :genres, only: [:index, :create, :edit, :update]
+  resources :customres, only: [:index, :show, :edit, :update]
+  resources :orders, only: [:show, :update]
+  resources :order_items, only: [:update]
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
