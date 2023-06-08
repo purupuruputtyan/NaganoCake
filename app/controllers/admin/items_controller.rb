@@ -44,7 +44,7 @@ class Admin::ItemsController < ApplicationController
     redirect_to items_path
   end
 
-private
+  private
 
   def item_params
     params.require(:post).permit(:image, :shop_name, :address, :latitude, :longitude, :menu, :impression, :price, :volume_status, :star)

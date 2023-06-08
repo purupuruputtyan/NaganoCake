@@ -9,6 +9,8 @@ class Item < ApplicationRecord
   validates :price, presence: true
 
   has_one_attached :image
+  
+  enum payment_method: { now_on_sale: 0, sales_stop: 1 }
 
   def get_image
     unless image.attached?

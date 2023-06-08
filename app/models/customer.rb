@@ -16,4 +16,7 @@ class Customer < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :phone_number, presence: true
   validates :post_code, presence: true, length: {maximum:7}
+  
+  
+  
 end
