@@ -1,4 +1,4 @@
-<%= form_with model: @item  url: url do |f| %>
+<%= form_with model: @item, url: url do |f| %>
   <div class="form-group mb-3 row">
     <label for="inputItemFile" class="col-sm-2 col-form-label">商品画像</label>
     <div class="col-sm-10">
@@ -9,28 +9,28 @@
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">商品名</label>
     <div class="col-sm-10">
-      <%= f.text_field :name, accept: "image/*" %>
+      <%= f.text_field :name, placeholder: "ショートケーキ" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">商品説明</label>
     <div class="col-sm-10">
-      <%= f.text_field :introduction, placeholder: "ショートケーキ" %>
+      <%= f.text_field :introduction, placeholder: "自慢のイチゴをふんだんに使用しております。" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">ジャンル</label>
     <div class="col-sm-10">
-      <%= f.text_field :genre, placeholder: "自慢のイチゴをふんだんに使用しております。" %>
+      <%= f.text_field :genre, placeholder: "ケーキ" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">税抜価格</label>
     <div class="col-sm-10">
-      <%= f.text_field :genre, placeholder: "10000円" %>
+      <%= f.text_field :genre, placeholder: "1000円" %>
     </div>
   </div>
 
