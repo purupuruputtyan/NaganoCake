@@ -47,7 +47,7 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:post).permit(:image, :shop_name, :address, :latitude, :longitude, :menu, :impression, :price, :volume_status, :star)
+    params.require(:item).permit(:image, :shop_name, :address, :latitude, :longitude, :menu, :impression, :price, :volume_status, :star)
   end
 
 end
