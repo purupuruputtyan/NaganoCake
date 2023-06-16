@@ -12,7 +12,7 @@ class Admin::ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       flash[:notice] = "商品の保存に成功しました。"
-      redirect_to item_path(@item.id)
+      redirect_to admin_item_path(@item.id)
     else
       @item = Item.all
       render :new
@@ -31,7 +31,7 @@ class Admin::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     if @item.update(item_params)
       flash[:notice] = "編集に成功しました。"
-      redirect_to item_path(@item.id)
+      redirect_to admin_item_path(@item.id)
     else
       render :edit
     end
@@ -41,13 +41,13 @@ class Admin::ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
     flash[:notice] = "商品を削除しました。"
-    redirect_to items_path
+    redirect_to admin_items_path
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:image, :shop_name, :address, :latitude, :longitude, :menu, :impression, :price, :volume_status, :star)
+    params.require(:item).permit(:image, :name, :introduction, :genre_id, :price, :sell_status)
   end
 
 end

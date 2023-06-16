@@ -1,11 +1,11 @@
 <h3>商品詳細</h3>
-<%= @item.get_image(500,400), class: "rounded" %>
+<%= image_tag @item.get_image(500,400) %>
 <h4>商品名</h4>
 <%= @item.name %>
 <h4>商品説明</h4>
 <%= @item.introduction %>
 <h4>ジャンル</h4>
-<%= @item.genre %>
+<%= @item.genre_id %>
 <h4>税込価格（税抜価格）</h4>
 <%= @item.price %>
 <h4>販売ステータス</h4>

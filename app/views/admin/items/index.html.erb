@@ -1,4 +1,5 @@
 <h3>商品一覧</h3>
+<%= link_to '新規登録', new_admin_item_path %>
 <table>
   <thead>
     <tr>
@@ -11,11 +12,14 @@
   </thead>
   <tbody>
     <% @items.each do |item| %>
-      <tr><%= item.id %></tr>
-      <th><%= item.name %></th>
-      <th><%= item.price %></th>
-      <th><%= item.genre %></th>
-      <th><%= item.status %></th>
+      <tr>
+        <th><%= item.id %></th>
+        <th><%= item.name %></th>
+        <th><%= item.price %></th>
+        <th><%= item.genre_id %></th>
+        <th><%= item.sell_status %></th>
+        <th><%= link_to '編集', edit_admin_item_path(item.id) %></th>
+      </tr>
     <% end %>
   </tbody>
 </table>
