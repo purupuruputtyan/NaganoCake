@@ -1,4 +1,5 @@
 <section class="inner">
-	<h2 class="section-ttl"><%= @item.name %>の編集</h2>
+  <h2 class="section-ttl"><%= @item.name %>の編集</h2>
+  <%= render 'layouts/errors', obj: @item %>
   <%= render 'form', item: @item, url: admin_item_path(@item), submit: '更新' %>
 </section>

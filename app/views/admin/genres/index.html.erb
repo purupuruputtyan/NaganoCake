@@ -1,5 +1,6 @@
 <h3>ジャンル一覧・追加</h3>
 <h4>ジャンル名</h4>
+<%= render 'layouts/errors', obj: @genre %>
 <%= render 'form', genre: @genre, url: admin_genres_path %>
 
 <table>
