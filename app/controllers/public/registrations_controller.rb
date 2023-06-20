@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Public::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -50,7 +50,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
                :first_name_kana,
                :post_code,
                :address,
-               :phone_number
+               :phone_number,
+               :is_deleted
       ])
   end
 
