@@ -23,7 +23,11 @@
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">ジャンル</label>
     <div class="col-sm-10">
+    <% if current_page?(new_admin_item_path) %>
+      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), { include_blank: "--選択してください--" } %>
+    <% else %>
       <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
+    <% end %>
     </div>
   </div>
 
@@ -37,11 +41,11 @@
   <div class="form-group mb-3 row">
     <label for="inputItemName" class="col-sm-2 col-form-label">販売ステータス</label>
     <div class="col-sm-10">
-      <%= f.radio_button :sell_status, "now_on_sale" %>
-      <%= f.label :sell_status_now_on_sale, "販売中" %>
+      <%= f.radio_button :sell_status, Item.sell_statuses.key(0) %>
+      <%= f.label :sell_status_now_on_sale, Item.sell_statuses_i18n[:now_on_sale] %>
 
-      <%= f.radio_button :sell_status, "sales_stop" %>
-      <%= f.label :sell_status_sales_stop, "販売停止" %>
+      <%= f.radio_button :sell_status, Item.sell_statuses.key(1) %>
+      <%= f.label :sell_status_sales_stop, Item.sell_statuses_i18n[:sales_stop]%>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 ja:
   enums:
-    order:
+    item:
       sell_status:
         now_on_sale: "販売中"
         sales_stop: "販売停止"
