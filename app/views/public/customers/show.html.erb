@@ -1,0 +1,39 @@
+<h3>マイページ</h3>
+
+<%= link_to '編集する', edit_customer_path, class: "btn btn-success" %>
+
+<table class="customer_info mb3">
+		<thead>
+			<th></th>
+			<th></th>
+			<th></th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>名前</td>
+				<td>(姓) <%= @customer.family_name %></td>
+				<td>(名) <%= @customer.first_name %></td>
+			</tr>
+			<tr>
+				<td>フリガナ</td>
+				<td>(セイ) <%= @customer.family_name_kana %></td>
+				<td>(メイ) <%= @customer.first_name_kana %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td colspan="2"><%= @customer.email %></td>
+			</tr>
+			<tr>
+				<td>郵便番号</td>
+				<td colspan="2"><%= @customer.post_code %></td>
+			</tr>
+			<tr>
+				<td>住所</td>
+				<td colspan="2"><%= @customer.address %></td>
+			</tr>
+			<tr>
+				<td>電話番号</td>
+				<td colspan="2"><%= @customer.phone_number %></td>
+			</tr>
+		</tbody>
+	</table>
