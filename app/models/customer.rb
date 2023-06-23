@@ -17,6 +17,10 @@ class Customer < ApplicationRecord
   validates :post_code, presence: true, length: {maximum:7}
   validates :address, presence: true
   
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
+  
   
   
 end
