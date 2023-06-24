@@ -1,7 +1,7 @@
 class Public::AddressesController < ApplicationController
 
   def index
-    @addesses = Address.all
+    @addresses = Address.all
   end
 
   def create
@@ -10,7 +10,7 @@ class Public::AddressesController < ApplicationController
       flash[:notice] = "新しい住所を保存しました。"
       redirect_to addresses_path
     else
-      @addesses = Address.all
+      @addresses = Address.all
       render :index
     end
   end
