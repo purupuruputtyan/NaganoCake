@@ -22,28 +22,28 @@
   <div class="form-group mb-3 row">
     <label for="Email" class="col-sm-3 col-form-label">メールアドレス</label>
     <div class="col-sm-9">
-      &emsp;&emsp;&emsp;<%= f.email_field :email, autofocus: true, autocomplete: "sample@example.com" %>
+      &emsp;&emsp;&emsp;<%= f.email_field :email, autofocus: true, placeholder: "sample@example.com" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="PhoneNumber" class="col-sm-3 col-form-label">郵便番号（ハイフンなし）</label>
     <div class="col-sm-9">
-      &emsp;&emsp;&emsp;<%= f.text_field :post_code, autofocus: true, autocomplete: "0000000000" %>
+      &emsp;&emsp;&emsp;<%= f.text_field :post_code, autofocus: true, placeholder: "0000000000" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="Address" class="col-sm-3 col-form-label">住所</label>
     <div class="col-sm-9">
-      &emsp;&emsp;&emsp;<%= f.text_field :address, autofocus: true, autocomplete: "東京都渋谷区代々木神園町0-0" %>
+      &emsp;&emsp;&emsp;<%= f.text_field :address, autofocus: true, placeholder: "東京都渋谷区代々木神園町0-0" %>
     </div>
   </div>
 
   <div class="form-group mb-3 row">
     <label for="PhoneNumber" class="col-sm-3 col-form-label">電話番号（ハイフンなし）</label>
     <div class="col-sm-9">
-      &emsp;&emsp;&emsp;<%= f.text_field :phone_number, autofocus: true, autocomplete: "0000000000" %>
+      &emsp;&emsp;&emsp;<%= f.text_field :phone_number, autofocus: true, placeholder: "0000000000" %>
     </div>
   </div>
 
