@@ -1,4 +1,7 @@
 <%= form_with model: address do |f| %>
+<%= render 'layouts/errors', obj: address %>
+  <%= f.hidden_field :customer_id, :value => current_customer.id %>
+
   <div class="form-group mb-3 row">
     <label for="PostCode" class="col-sm-3 col-form-label">郵便番号（ハイフンなし）</label>
     <div class="col-sm-9">
