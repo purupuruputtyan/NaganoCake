@@ -1,7 +1,9 @@
 <h3>商品一覧</h3>
 <% @items.each do |item| %>
-  <%= image_tag item.get_image(300,200) %>
-  <%= item.name %>
+  <%= link_to item_path(item.id) do %>
+    <%= image_tag item.get_image(300,200) %>
+  <% end %>
+  <%= link_to item.name, item_path(item.id) %>
   <%= item.introduction %>
   税抜<%= item.price %>円
   税込<%= item.with_tax_price %>円
