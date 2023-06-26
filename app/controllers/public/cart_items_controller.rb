@@ -11,7 +11,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to cart_items_path
     else
       @cart_item = current_customer.cart_items.new(cart_item_params)
-      @cart_item.item_id = @item.id
+      #@cart_item.item_id = @item.id
       if @cart_item.save
         flash[:notice] = "カートに入りました。"
         redirect_to cart_items_path
