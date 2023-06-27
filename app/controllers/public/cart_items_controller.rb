@@ -11,7 +11,6 @@ class Public::CartItemsController < ApplicationController
       redirect_to cart_items_path
     else
       @cart_item = current_customer.cart_items.new(cart_item_params)
-      #@cart_item.item_id = @item.id
       if @cart_item.save
         flash[:notice] = "カートに入りました。"
         redirect_to cart_items_path
@@ -21,20 +20,18 @@ class Public::CartItemsController < ApplicationController
     end
   end
 
-  def index
-
-  end
-
   def update
-
+    
   end
 
   def destroy
-
+    @cart_item.destroy if @cart_item
+    redirect_to cart_items_path
   end
 
   def destroy_all
-
+    current_customer.cart_items.destroy_all
+    redirect_to cart_items_path
   end
 
   private
