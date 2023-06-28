@@ -21,11 +21,13 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def destroy
-    @cart_item.destroy if @cart_item
+    cart_item = CartItem.find(params[:id])
+    cart_item.destroy
+    @cart_items = CartItem.all
     redirect_to cart_items_path
   end
 

@@ -22,10 +22,9 @@ scope module: :public do
       patch :is_deleted
     end
   end
-  delete 'destroy_all' => 'cart_items#destroy_all'
-  resources :cart_items, only: [:index, :create, :update, :destroy] #do
-    #delete 'destroy_all', on: :collection
-  #end
+  resources :cart_items, only: [:index, :create, :update, :destroy] do
+    delete 'destroy_all', on: :collection
+  end
   resources :orders, only: [:new, :index, :create, :show] do
     collection do
       post :confirm
