@@ -21,7 +21,13 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
-
+    @cart_item = CartItem.find(params[:id])
+    if @cart_item.update(cart_item_params)
+      flash[:notice] = "商品の数量を変更しました。"
+      redirect_to cart_items_path
+    else
+      render :index
+    end
   end
 
   def destroy
