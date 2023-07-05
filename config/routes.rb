@@ -28,6 +28,7 @@ scope module: :public do
   resources :orders, only: [:new, :index, :create, :show] do
     collection do
       post :confirm
+      get :confirm, to: redirect('orders/new')
       get :thanks
     end
   end
