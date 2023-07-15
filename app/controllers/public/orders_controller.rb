@@ -13,7 +13,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order_items = @order.order_items
   end
-  
+
   def confirm
     @order=Order.new(order_params)
     if params[:order][:select_address] == "0"
@@ -30,7 +30,7 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @total_price = @cart_items.inject(0) { |sum, cart_item| sum + cart_item.subtotal }
   end
-  
+
   def create
     @order = Order.new(order_params)
     if @order.save
@@ -44,11 +44,15 @@ class Public::OrdersController < ApplicationController
         order_items.save
       end
         current_customer.cart_items.destroy_all
-        redirect_to action: :finish
+        redirect_to thanks_orders_path
     else
        @order = Order.new(order_params)
        render :new
     end
+  end
+
+  def thanks
+
   end
 
   private
