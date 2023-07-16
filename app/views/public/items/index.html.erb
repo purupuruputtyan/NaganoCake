@@ -1,11 +1,13 @@
 <h3>商品一覧</h3>
 <div class="row">
-<% @items.each do |item| %>
   <div class="d-flex flex-wrap justify-content-evenly col-12">
-    <%= link_to item_path(item.id) do %>
-      <%= image_tag item.get_image(300,200) %></br>
-      <%= item.name %>
+    <% @items.each do |item| %>
+      <div class="col-md-4 mb-3">
+        <%= link_to item_path(item.id) do %>
+          <%= image_tag item.get_image(300,200) %></br>
+          <%= item.name %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
 </div>
